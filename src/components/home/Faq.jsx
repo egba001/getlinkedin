@@ -5,7 +5,7 @@ import Star from '../common/Star';
 
 const Faq = () => {
     return (
-        <section className="lg:py-16 border-b relative border-b-borderColor text-white">
+        <section id="faq" className="lg:py-16 border-b relative border-b-borderColor text-white">
             <div className="container relative mx-auto h-full px-6 lg:px-20 flex flex-col-reverse items-center lg:flex-row-reverse justify-between">
                 <div className='hidden lg:block'>
                     <Star name='url(img/starpu.png)' size='calc(6% - 20px)' top='1%' left='5%'/>

@@ -1,10 +1,16 @@
 import TimelineBig from "../ui/TimelineBig";
 import { motion } from "framer-motion";
+import TimelineSmall from "../ui/Timelinesmall";
+import { useMediaQuery } from 'react-responsive'
 
 const Timeline = () => {
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 1224px)'
+      })
+
     return (
-        <section className="text-white h-full w-full">
-            <div className="container mx-auto h-full px-8 lg:px-4 py-16">
+        <section id='timeline' className="text-white h-full w-full">
+            <div className="container mx-auto h-full px-8 lg:px-8 pt-16 pb-96 lg:py-16">
                 <div className="w-full h-full">
                     <motion.h2
                         initial={{ y: 40, opacity: 0 }}
@@ -18,8 +24,8 @@ const Timeline = () => {
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ type: "spring", duration: 20, stiffness: 20 }}
                         className="text-center mx-auto font-normal mb-24 text-[14px] w-full lg:w-[30%]">Here is the breakdown of the time we anticipate using for the upcoming event.</motion.p>
-                        <div className="w-fit h-full mx-auto">
-                            <TimelineBig />
+                        <div className="w-full mx-auto">
+                            {isDesktopOrLaptop ? <TimelineBig /> : <TimelineSmall />}
                         </div>
                 </div>
             </div>

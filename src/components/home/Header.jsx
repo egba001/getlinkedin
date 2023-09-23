@@ -5,6 +5,7 @@ import bg from '/img/manmatrix.png';
 import CountdownTimer from "./../ui/CountdownTimer";
 import BlurredCircle from "./../common/BlurredCircle";
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -48,7 +49,9 @@ const Header = () => {
                             <div className="lg:h-12 lg:w-12 w-8 h-8 inline-block bg-[url(img/fire.png)] bg-no-repeat bg-contain"></div>
                         </div>
                         <p className="text-[12px] lg:text-[20px] text-center lg:text-start font-normal font-sans w-[80%] lg:w-[66%] mt-6 mb-12">Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize</p>
-                        <Button text={'Register'} />
+                        <Link to='/registration'>
+                            <Button text={'Register'} />
+                        </Link>
                         <CountdownTimer targetTime={targetTime} />
                     </motion.div>
                     <div className="lg:absolute bg-background top-0 lg:-right-10 w-[100%] lg:max-w-[89%] xl:w-[80%] lg:mx-0">
