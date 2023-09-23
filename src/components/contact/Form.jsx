@@ -1,25 +1,14 @@
 import { useFormik } from "formik";
 import Button from "../common/Button";
 import * as Yup from 'yup';
-import { useState } from "react";
+import { BsInstagram } from "react-icons/bs";
+import { RiTwitterXLine } from "react-icons/ri";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 const Form = () => {
 
-    // state to hold error or success after form posting
-    const [ submissionStatus, setSubmissionStatus ] = useState();
-
-    // State to manage visibilty of message
-    const [ visible, setVisible ] = useState(false);
-
-    // Function to conditionally display success message
-    const displayFormStatus = () => {
-        setVisible(true)
-        setTimeout(() => {
-            setVisible(false)
-        }, 4000)
-    }
-
-    console.log(submissionStatus)
+    // Regular expression for phone number
+    const phoneRegExp = /^([0]{1})[0-9]{10}$/
 
     // Create form instance
     const formik = useFormik({
@@ -30,7 +19,6 @@ const Form = () => {
           message: '',
         },
         onSubmit: function (values, actions) {
-            console.log(`You are registered! Name: ${values.first_name}. Email: ${values.email}. Message: ${values.message}.`);
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
 
@@ -43,7 +31,17 @@ const Form = () => {
             }
             fetch(`${import.meta.env.VITE_BASE_URL}/hackathon/contact-form`, requestOptions)
             .then(response => response.json())
-            .then(result =>  setSubmissionStatus(result.date_created))
+            .then(result =>  {
+                console.log(result)
+                actions.resetForm({
+                    values: {
+                        first_name: '',
+                        phone_number: '',
+                        email: '',
+                        message: '',
+                    }
+                })
+            })
             .catch(error => console.log('error', error));
             actions.setSubmitting(false);
         },
@@ -54,7 +52,8 @@ const Form = () => {
                     .email('Invalid email')
                     .required('Email address is required'),
             message: Yup.string()
-                        .required('Message required')
+                        .required('Message required'),
+            phone_number: Yup.string().matches(phoneRegExp, "Invalid phone number.").required('Phone number required'),
           })
       })
       console.log()
@@ -70,10 +69,23 @@ const Form = () => {
                     value={formik.values.first_name}
                     id='first_name'
                     placeholder='First Name'
-                    className={`bg-inherit placeholder:text-white shadow-xl w-full py-2 pl-6 focus:outline-none rounded-md mb-1 border ${formik.touched.first_name && formik.errors.first_name ? 'border-red-400' : 'border-white'}`}
+                    className={`bg-white/[.05] placeholder:text-white shadow-xl w-full py-2 pl-6 focus:outline-none rounded-md mb-1 border ${formik.touched.first_name && formik.errors.first_name ? 'border-red-400' : 'border-white'}`}
                 />
                 {formik.touched.first_name && formik.errors.first_name && (
                     <span className='text-red-400 mb-12'>{formik.errors.first_name}</span>
+                )}
+                <input
+                    type="text"
+                    name="phone_number"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.phone_number}
+                    id='phone_number'
+                    placeholder='Phone Number'
+                    className={`bg-white/[.05] placeholder:text-white shadow-xl w-full py-2 pl-6 mt-6 focus:outline-none rounded-md mb-1 border ${formik.touched.phone_number && formik.errors.phone_number ? 'border-red-400' : 'border-white'}`}
+                />
+                {formik.touched.phone_number && formik.errors.phone_number && (
+                    <span className='text-red-400 mb-12'>{formik.errors.phone_number}</span>
                 )}
                 <input
                     type="email"
@@ -83,7 +95,7 @@ const Form = () => {
                     value={formik.values.email}
                     id='firstName'
                     placeholder='Email'
-                    className={`bg-inherit placeholder:text-white shadow-xl w-full py-2 pl-6 focus:outline-none rounded-md mb-1 mt-6 border ${formik.touched.email && formik.errors.email ? 'border-red-400' : 'border-white'}`}
+                    className={`bg-white/[.05] placeholder:text-white shadow-xl w-full py-2 pl-6 focus:outline-none rounded-md mb-1 mt-6 border ${formik.touched.email && formik.errors.email ? 'border-red-400' : 'border-white'}`}
                 />
                 {formik.touched.email && formik.errors.email && (
                     <span className='text-red-400 mb-12'>{formik.errors.email}</span>
@@ -96,16 +108,32 @@ const Form = () => {
                     value={formik.values.message}
                     id='message'
                     placeholder='Message'
-                    className={`bg-inherit placeholder:text-white shadow-xl w-full py-2 pl-6 focus:outline-none rounded-md mb-1 mt-6 border ${formik.touched.message && formik.errors.message ? 'border-red-400' : 'border-white'}`}
+                    className={`bg-white/[.05] placeholder:text-white shadow-xl w-full py-2 pl-6 focus:outline-none rounded-md mb-1 mt-6 border ${formik.touched.message && formik.errors.message ? 'border-red-400' : 'border-white'}`}
                 />
                 {formik.touched.message && formik.errors.message && (
                     <span className='text-red-400 mb-12'>{formik.errors.message}</span>
                 )}
-                <div className="w-fit mx-auto mt-10" onClick={displayFormStatus}>
+                <div className="w-fit mx-auto mt-10" >
                     <Button type='submit' disabled={formik.isSubmitting} text={'Submit'} />
                 </div>
             </form>
-            <div className={visible ? 'block py-3 bg-green-600 absolute z-10 -bottom-14 rounded-md text-[14px] w-full mt-4 text-center' : 'hidden'}>{submissionStatus ? 'Message Successfully sent. Thank you!' : ''}</div>
+            <div className="w-fit lg:hidden my-6 mx-auto">
+                    <p className="text-purp font-semibold text-center mb-2 text-[12px]">Share On</p>
+                        <div className='flex space-x-3 text-white items-center'>
+                            <div className='cursor-pointer'>
+                                <BsInstagram size={10} />
+                            </div>
+                            <div className='cursor-pointer'>
+                                <RiTwitterXLine size={10} />
+                            </div>
+                            <div className='cursor-pointer'>
+                                <FaFacebookF size={10} />
+                            </div>
+                            <div className='cursor-pointer'>
+                                <FaLinkedinIn size={10} />
+                            </div>
+                        </div>
+                    </div>
         </div>
     )
 }

@@ -11,20 +11,22 @@ import Star from './../common/Star';
 const Footer = () => {
     return  (
         <footer className="bg-[#100B20] text-[12px] text-white pt-14 h-full pb-4">
-            <div className="container mx-auto relative px-24 h-full flex justify-between">
-                <Star name='url(whitestar.svg)' size='calc(20% - 20px)' top='85%' left='95%'/>
-                <Star name='url(img/starpu.png)' size='calc(20% - 20px)' top='98%' left='49%'/>
-                <Star name='url(img/starash.png)' size='calc(20% - 20px)' top='15%' left='73%'/>
-                <Star name='url(whitestar.svg)' size='calc(20% - 20px)' top='15%' left='3%'/>
+            <div className="container mx-auto relative px-10 lg:px-24 h-full flex flex-col lg:flex-row justify-between">
+                <div className='hidden lg:block'>
+                    <Star name='url(whitestar.svg)' size='calc(20% - 20px)' top='85%' left='95%'/>
+                    <Star name='url(img/starpu.png)' size='calc(20% - 20px)' top='98%' left='49%'/>
+                    <Star name='url(img/starash.png)' size='calc(20% - 20px)' top='15%' left='73%'/>
+                    <Star name='url(whitestar.svg)' size='calc(20% - 20px)' top='15%' left='3%'/>
+                </div>
 
-                <div className="w-1/2 h-full">
-                    <div className='h-full'>
-                        <img src={logo} alt="Get linked log" />
-                        <p className='mt-6 w-[78%] mb-10 leading-6'>Getlinked Tech Hackathon is a technology innovation program established by a group of organizations with the aim of showcasing young and talented individuals in the field of technology</p>
-                        <p className=''>Terms of Use <span className='text-purp mx-2'>|</span> Privacy</p>
+                <div className="w-full lg:w-1/2 h-full">
+                    <div className='h-full mb-6'>
+                        <img src={logo} alt="Get linked log" className='w-[50%] lg:w-[25%]' />
+                        <p className='mt-6 w-full lg:w-[78%] mb-10 leading-6'>Getlinked Tech Hackathon is a technology innovation program established by a group of organizations with the aim of showcasing young and talented individuals in the field of technology</p>
+                        <p className=''>Terms of Use <span className='text-purp mx-2'>|</span> Privacy Policy</p>
                     </div>
                 </div>
-                <div className="w-[43%] flex justify-between">
+                <div className="w-full space-y-12 lg:w-[43%] flex flex-col lg:flex-row justify-between">
                     <div className='w-fit'>
                         <h3 className='text-purp font-semibold mb-4'>Useful links</h3>
                         <ul className='flex flex-col space-y-4'>
@@ -52,7 +54,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className='w-fit -mr-28'>
-                        <h3 className='text-purp font-semibold mb-4'>Useful links</h3>
+                        <h3 className='text-purp font-semibold mb-4'>Contact Us</h3>
                         <ul className='flex flex-col space-y-4'>
                             <li className='flex items-center space-x-2'>
                                 <BiSolidPhoneCall className='inline-block' size={15}/>
@@ -66,7 +68,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <p className='w-fit mx-auto mt-10 text-white'>All rights reserved. © getlinked Ltd.</p>
+            <p className='w-fit mx-auto mb-6 lg:mb-0 mt-10 text-white'>All rights reserved. © getlinked Ltd.</p>
         </footer>
     )
 }

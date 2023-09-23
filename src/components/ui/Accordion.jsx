@@ -1,10 +1,16 @@
 import { Disclosure, Transition } from '@headlessui/react'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
+import { motion } from 'framer-motion';
 
 const Accordion = () => {
   return (
-    <div className="w-full pt-4 top-45 flex flex-col absolute">
-      <div className="w-full  relative border-b border-b-purp  max-w-md">
+    <div className="w-full pt-4 top-45 mb-12 lg:mb-0 flex flex-col lg:absolute">
+      <motion.div
+        initial={{ x: -40, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", duration: 8, stiffness: 20 }}
+        className="w-full  relative border-b border-b-purp  max-w-md">
         <Disclosure className=''>
           {({ open }) => (
             <>
@@ -29,8 +35,13 @@ const Accordion = () => {
             </>
           )}
         </Disclosure>
-      </div>
-      <div className="w-full  relative border-b border-b-purp mt-3  max-w-md">
+      </motion.div>
+      <motion.div
+        initial={{ x: -40, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", duration: 12, stiffness: 20 }}
+        className="w-full  relative border-b border-b-purp mt-3  max-w-md">
         <Disclosure className=''>
           {({ open }) => (
             <>
@@ -55,13 +66,18 @@ const Accordion = () => {
             </>
           )}
         </Disclosure>
-      </div>
-      <div className="w-full  relative border-b border-b-purp mt-3 max-w-md">
+      </motion.div>
+      <motion.div
+        initial={{ x: -40, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", duration: 16, stiffness: 20 }}
+        className="w-full  relative border-b border-b-purp mt-3 max-w-md">
         <Disclosure className=''>
           {({ open }) => (
             <>
               <Disclosure.Button className="flex w-full items-center justify-between py-2 text-left text-sm font-medium text-purp">
-                <span className='text-white font-normal text-[14px] leading-8'>What happens if I don&#39;t have an idea for a project?</span>
+                <span className='text-white font-normal text-[14px] w-[86%] lg:w-full leading-8'>What happens if I don&#39;t have an idea for a project?</span>
                 <div>
                     { open ? <AiOutlineMinus /> : <AiOutlinePlus /> }
                 </div>
@@ -81,8 +97,13 @@ const Accordion = () => {
             </>
           )}
         </Disclosure>
-      </div>
-      <div className="w-full  relative border-b border-b-purp mt-3 max-w-md">
+      </motion.div>
+      <motion.div
+        initial={{ x: -40, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", duration: 20, stiffness: 20 }}
+        className="w-full  relative border-b border-b-purp mt-3 max-w-md">
         <Disclosure className=''>
           {({ open }) => (
             <>
@@ -107,13 +128,18 @@ const Accordion = () => {
             </>
           )}
         </Disclosure>
-      </div>
-      <div className="w-full  relative border-b border-b-purp mt-3 max-w-md">
+      </motion.div>
+      <motion.div
+        initial={{ x: -40, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", duration: 24, stiffness: 20 }}
+        className="w-full  relative border-b border-b-purp mt-3 max-w-md">
         <Disclosure className=''>
           {({ open }) => (
             <>
               <Disclosure.Button className="flex w-full items-center justify-between py-2 text-left text-sm font-medium text-purp">
-                <span className='text-white font-normal text-[14px] leading-8'>What happens after the hackathon ends</span>
+                <span className='text-white font-normal w-[80%] lg:w-full text-[14px] leading-8'>What happens after the hackathon ends</span>
                 <div>
                     { open ? <AiOutlineMinus /> : <AiOutlinePlus /> }
                 </div>
@@ -133,8 +159,13 @@ const Accordion = () => {
             </>
           )}
         </Disclosure>
-      </div>
-      <div className="w-full  relative border-b border-b-purp mt-3 max-w-md">
+      </motion.div>
+      <motion.div
+        initial={{ x: -40, opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "spring", duration: 28, stiffness: 20 }}
+        className="w-full  relative border-b border-b-purp mt-3 max-w-md">
         <Disclosure className=''>
           {({ open }) => (
             <>
@@ -159,7 +190,7 @@ const Accordion = () => {
             </>
           )}
         </Disclosure>
-      </div>
+      </motion.div>
     </div>
   )
 }
