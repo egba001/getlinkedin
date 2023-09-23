@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types"
-import Success from "../ui/Success";
 import { SuccessC } from './../../context/SuccessContext';
 
 const Form = () => {
@@ -172,6 +171,7 @@ const Form = () => {
                         className={`bg-white/[.06] text-gray-400 placeholder:text-white/[.5] placeholder:text-[14px] shadow-xl w-full py-2 pl-3 focus:outline-none rounded-md mb-1 border ${formik.touched.category && formik.errors.category ? 'border-red-400' : 'border-white'}`}
                     >
                         <option value='' selected disabled hidden>Select your category</option>
+                        {categories.length === 0 && <option value=''>Loading...</option>  }
                         { categories.map((cat, index) => (
                             <option key={index} value={cat.id}>{cat.name}</option>
                         ))}
@@ -212,6 +212,7 @@ const Form = () => {
                         className={`bg-white/[.06] text-gray-400 placeholder:text-white/[.5] placeholder:text-[14px] shadow-xl w-full py-2 pl-3 focus:outline-none rounded-md mb-1 border ${formik.touched.category && formik.errors.category ? 'border-red-400' : 'border-white'}`}
                     >
                         <option value='' selected disabled hidden>Select your category</option>
+                        {categories.length === 0 && <option value=''>Loading...</option>  }
                         { categories.map((cat, index) => (
                             <option key={index} value={cat.id}>{cat.name}</option>
                         ))}
