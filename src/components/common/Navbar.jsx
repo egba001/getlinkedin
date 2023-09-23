@@ -15,18 +15,23 @@ const Navbar = () => {
 
     const scrollToElement = useScroll();
 
+    const navigate = useNavigate();
+
     // get current location from react router dom
     const { pathname } = useLocation();
 
     const handleFaqClick = () => {
+        navigate('/')
         scrollToElement('faq');
     };
 
     const handleOverClick = () => {
+        navigate('/')
         scrollToElement('overview');
     };
 
     const handleTimeClick = () => {
+        navigate('/')
         scrollToElement('timeline');
     };
 
