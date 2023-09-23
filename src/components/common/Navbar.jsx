@@ -64,8 +64,8 @@ const Navbar = () => {
                 </ul>
                 {
                     pathname !== '/registration' ?
-                    <Link to='/registration' className="bg-button py-4 hover:opacity-70 active:opacity-40 transition-opacity duration-300 rounded-md text-center w-44 font-normal text-white">
-                    Register</Link> : <Link to='/registration' className="p-px bg-gradient-to-b from-[#903AFF] to-[#FE34B9] rounded-md text-center w-44 font-normal text-white"><div className="rounded-md py-4 bg-background">Register</div></Link>
+                    <NavLink to='/registration' className="bg-button py-4 hover:opacity-70 active:opacity-40 transition-opacity duration-300 rounded-md text-center w-44 font-normal text-white">
+                    Register</NavLink> : <NavLink to='/registration' className="p-px bg-gradient-to-b from-[#903AFF] to-[#FE34B9] rounded-md text-center w-44 font-normal text-white"><div className="rounded-md py-4 bg-background">Register</div></NavLink>
                 }
             </div>
             </div>
@@ -75,26 +75,21 @@ const Navbar = () => {
 
 const MobileNav = ({ closeMenu }) => {
 
-    const { scrollToElement } = useScroll();
-
     const navigate = useNavigate()
 
     const handleFaqClick = () => {
         closeMenu()
         navigate('/')
-        scrollToElement('faq');
     };
 
     const handleOverClick = () => {
         closeMenu()
         navigate('/')
-        scrollToElement('overview');
     };
 
     const handleTimeClick = () => {
         closeMenu()
         navigate('/')
-        scrollToElement('timeline');
     };
 
     return (
