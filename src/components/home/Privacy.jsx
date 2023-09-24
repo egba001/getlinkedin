@@ -1,5 +1,6 @@
 import Star from '../common/Star';
 import unlock from './../../assets/lock.png'
+import list from '/img/list.png'
 import BlurredCircle from './../common/BlurredCircle';
 import Button from './../common/Button';
 import { motion } from 'framer-motion';
@@ -53,9 +54,9 @@ const Privacy = () => {
 
                             <h3 className="text-purp text-base font-bold">Licensing Policy</h3>
                             <h4 className="font-bold text-[14px] mb-4">Here are terms of our Standard License:</h4>
-                            <ul className="list-image-[url(img/list.png)] pl-6 flex flex-col space-y-6">
-                                <li>The Standard License grants you a non-exclusive right to navigate and register for our event</li>
-                                <li>You are licensed to use the item available at any free source sites, for your project developement</li>
+                            <ul className="flex flex-col space-y-6">
+                                <li className='flex items-start space-x-3'><img src={list} alt='list ico' className='mt-1'/>  <span>The Standard License grants you a non-exclusive right to navigate and register for our event</span></li>
+                                <li className='flex items-start space-x-3'><img src={list} alt='list ico' className='mt-1'/> <span>You are licensed to use the item available at any free source sites, for your project developement</span></li>
                             </ul>
                         </div>
                         <div className='mx-auto w-fit mb-10 lg:mb-0'>
