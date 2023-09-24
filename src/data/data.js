@@ -24,10 +24,3 @@ export const options = [
         description: "Judges will Ensure that the team adhered to the rules and guidelines of the hackathon, including deadlines, use of specific technologies or APIs, and any other competition-specific requirements."
     }
 ]
-
-export const faq = [
-    {
-        question: "",
-        answer: ""
-    }
-]
