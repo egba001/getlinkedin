@@ -4,10 +4,10 @@ import Star from "./../common/Star";
 import bg from './../../assets/manmatrix.png';
 import CountdownTimer from "./../ui/CountdownTimer";
 import BlurredCircle from "./../common/BlurredCircle";
-import chain from './../../assets/chain.png'
-import bulb from './../../assets/bulb.png'
-import fire from './../../assets/fire.png'
-import curve from './../../assets/svg/curve.svg'
+import chain from '/img/chain.png'
+import bulb from '/img/bulb.png'
+import fire from '/img/fire.png'
+import curve from '/curve.svg'
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom";
 
