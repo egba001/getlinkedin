@@ -45,7 +45,7 @@ const TimelineSmall = () => {
                 className="w-[98%] h-[30%] relative mx-auto flex flex-col justify-between">
                 <div className="w-1 h-full absolute bg-purp ">
                     <div className="rounded-full top-[90%] bg-purp -translate-x-1/2 absolute border-[8px] border-background items-center flex justify-center w-10 h-10 bg-button">
-                      <p className="font-normal">2</p>
+                      <p className="font-normal">3</p>
                     </div>
                 </div>
                 <div className="ml-7 mb-3">
@@ -62,7 +62,7 @@ const TimelineSmall = () => {
                 className="w-[98%] h-[20%] relative mx-auto flex flex-col justify-between">
                 <div className="w-1 h-full absolute bg-purp ">
                     <div className="rounded-full top-[90%] bg-purp -translate-x-1/2 absolute border-[8px] border-background items-center flex justify-center w-10 h-10 bg-button">
-                      <p className="font-normal">2</p>
+                      <p className="font-normal">4</p>
                     </div>
                 </div>
                 <div className="ml-7 mb-3">
@@ -79,7 +79,7 @@ const TimelineSmall = () => {
                 className="w-[98%] h-[20%] relative mx-auto flex flex-col justify-between">
                 <div className="w-1 h-full absolute bg-purp ">
                     <div className="rounded-full top-[90%] bg-purp -translate-x-1/2 absolute border-[8px] border-background items-center flex justify-center w-10 h-10 bg-button">
-                      <p className="font-normal">2</p>
+                      <p className="font-normal">5</p>
                     </div>
                 </div>
                 <div className="ml-7 mb-3">
@@ -96,7 +96,7 @@ const TimelineSmall = () => {
                 className="w-[98%] h-[20%] relative mx-auto flex flex-col justify-between">
                 <div className="w-1 h-full absolute bg-purp ">
                     <div className="rounded-full top-[90%] bg-purp -translate-x-1/2 absolute border-[8px] border-background items-center flex justify-center w-10 h-10 bg-button">
-                      <p className="font-normal">2</p>
+                      <p className="font-normal">6</p>
                     </div>
                 </div>
                 <div className="ml-7 mb-3">
