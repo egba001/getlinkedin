@@ -5,8 +5,22 @@ import gold from './../../assets/gold.png';
 import BlurredCircle from './../common/BlurredCircle';
 import Star from './../common/Star';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const Prizes = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
+
     return (
         <section className='backdrop-filter py-24 lg:py-36 text-white bg-blend-color-burn bg-black/[.1] bg-opacity-30'>
             <div className="container flex-col lg:flex-row relative mx-auto px-12 flex items-center">

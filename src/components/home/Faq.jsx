@@ -2,8 +2,22 @@ import faq from './../../assets/svg/faq.svg';
 import Accordion from '../ui/Accordion';
 import { motion } from 'framer-motion';
 import Star from '../common/Star';
+import { useEffect } from 'react';
 
 const Faq = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
+
     return (
         <section id="faq" className="lg:py-16 border-b relative border-b-borderColor text-white">
             <div className="container relative mx-auto h-full px-6 lg:px-20 flex flex-col-reverse items-center lg:flex-row-reverse justify-between">

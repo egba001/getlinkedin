@@ -5,8 +5,21 @@ import plan from './../../assets/plan.png';
 import BlurredCircle from "./../common/BlurredCircle";
 import Star from "./../common/Star";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const Overview = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
 
     return (
         <div id="overview" className="w-full text-white will-change-auto">

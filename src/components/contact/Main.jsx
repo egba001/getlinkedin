@@ -5,8 +5,21 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import BlurredCircle from '../common/BlurredCircle';
 import Form from './Form';
 import Star from '../common/Star';
+import { useEffect } from 'react';
 
 const Main = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
 
     return (
         <main className="w-full lg:h-full text-white relative">

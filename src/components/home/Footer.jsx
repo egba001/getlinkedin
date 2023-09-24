@@ -7,8 +7,23 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { BiSolidPhoneCall } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
 import Star from './../common/Star';
+import { useEffect } from 'react';
 
 const Footer = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
+
+
     return  (
         <footer className="bg-[#100B20] text-[12px] text-white pt-14 h-full pb-4">
             <div className="container mx-auto relative px-10 lg:px-24 h-full flex flex-col lg:flex-row justify-between">

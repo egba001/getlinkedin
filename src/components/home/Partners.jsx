@@ -1,9 +1,23 @@
+import { useEffect } from 'react';
 import Star from '../common/Star';
 import sponsors from './../../assets/sponsors.png'
 import BlurredCircle from "./../common/BlurredCircle";
 import { motion } from 'framer-motion';
 
 const Partners = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
+
     return (
         <section className="h-full border-b py-24 lg:py-16 text-white border-b-borderColor">
             <div className="container relative mx-auto px-10 lg:px-20">

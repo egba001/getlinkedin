@@ -2,11 +2,24 @@ import TimelineBig from "../ui/TimelineBig";
 import { motion } from "framer-motion";
 import TimelineSmall from "../ui/Timelinesmall";
 import { useMediaQuery } from 'react-responsive'
+import { useEffect } from "react";
 
 const Timeline = () => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
       })
+
+      useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
 
     return (
         <section id='timeline' className="text-white h-full w-full">

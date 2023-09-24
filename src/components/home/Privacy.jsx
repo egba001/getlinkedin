@@ -4,8 +4,22 @@ import list from '/img/list.png'
 import BlurredCircle from './../common/BlurredCircle';
 import Button from './../common/Button';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const Privacy = () => {
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+          window.scrollTo(0, 0); // Scroll to the top before refreshing
+        };
+    
+        window.addEventListener('unload', onBeforeUnload);
+    
+        return () => {
+          window.removeEventListener('unload', onBeforeUnload);
+        };
+      }, []);
+
     return (
         <section className="h-full py-28 text-white">
             <div className="container h-full flex-col lg:flex-row mx-auto px-8 lg:px-20 relative flex justify-between" >
