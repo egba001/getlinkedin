@@ -1,6 +1,6 @@
 import { introduction, guidelines, options } from "../../data/data";
 import idea from './../../assets/idea.png';
-import analysis from './../../assets/svg/analysis.svg';
+import analysis from './../../assets/analysis.png';
 import plan from './../../assets/plan.png';
 import BlurredCircle from "./../common/BlurredCircle";
 import Star from "./../common/Star";
@@ -100,8 +100,9 @@ const Overview = () => {
                         whileInView={{ x: 0, opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ type: "spring", duration: 3, stiffness: 80 }}
-                        className="w-[95%] lg:w-[50%] mt-16 relative lg:before:absolute lg:before:left-[13%] lg:before:-top-[10%] lg:before:bg-gradient-to-r lg:before:z-10 lg:before:from-[#FF2674] lg:before:to-[#8F01FE] lg:before:rounded-full lg:before:h-32 lg:before:w-32">
-                        <img src={analysis} className="relative z-10" alt="Big idea illustration" />
+                        className="w-[95%] lg:w-[50%] mt-16 relative">
+                            <div className="hidden lg:block lg:ml-[13%] lg:-top-[10%] lg:bg-gradient-to-r lg:from-[#FF2674] lg:to-[#8F01FE] lg:rounded-full lg:h-32 lg:w-32"></div>
+                            <div className="z-10 lg:-mt-[72px]"><img src={analysis} className="z-80" alt="Big idea illustration" /></div>
                     </motion.div>
                     <div className="w-full lg:w-[40%] lg:mr-14 relative">
                         <motion.h3

@@ -1,4 +1,4 @@
-import faq from './../../assets/svg/faq.svg';
+import faq from './../../assets/faq.png';
 import Accordion from '../ui/Accordion';
 import { motion } from 'framer-motion';
 import Star from '../common/Star';
