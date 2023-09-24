@@ -24,7 +24,7 @@ const Main = () => {
                 <div className='z-10 mt-0 w-[70%] mx-auto lg:mx-0'>
                     <img src={man} alt="Illustration of a man in front of a Desktop setup" className='w-[120%]' />
                 </div>
-                <div className='w-full lg:w-[67%] bg-inherit lg:bg-[#FFFFFF]/[.05] z-10 rounded-lg px-8 lg:p-16 shadow-lg'>
+                <div className='w-full lg:w-[67%] bg-inherit lg:bg-[#FFFFFF]/[.05] z-10 rounded-lg lg:px-8 px-5 lg:p-16 shadow-lg'>
                     <div className='w-full'>
                         <h3 className='font-semibold text-[20px] hidden lg:block lg:text-3xl mb-4 lg:mb-10 font-clash text-purp'>Register</h3>
                         <p className='mb-1 lg:mb-2'>

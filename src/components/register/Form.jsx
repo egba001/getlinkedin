@@ -68,7 +68,7 @@ const Form = () => {
                             group_size: '',
                             project_topic: '',
                             category: '',
-                            privacy_policy_accepted: null
+                            privacy_policy_accepted: false
                         }
                     })
                 }
@@ -86,7 +86,7 @@ const Form = () => {
             group_size: Yup.number().required('Select team size'),
             project_topic: Yup.string().required('Project topic required'),
             category: Yup.string().required('Category required'),
-            privacy_policy_accepted: Yup.bool().oneOf([true], 'Accept the terms and conditions').required('Accept the terms and conditions'),
+            privacy_policy_accepted: Yup.boolean().oneOf([true], 'Accept the terms and conditions'),
           })
       })
 
@@ -253,7 +253,11 @@ const Form = () => {
                         id='privacy_policy_accepted'
                         />
                         <span className="text-[12px] font-normal">I agreed with the event terms and conditions and privacy policy</span>
+                        {formik.touched.privacy_policy_accepted && formik.errors.privacy_policy_accepted && (
+                    <span className='text-red-400 text-xs absolute bottom-20 lg:bottom-20 left-0'>{formik.errors.privacy_policy_accepted}</span>
+                    )}
                 </label>
+
                 <button type="submit" className="w-full mx-auto mt-10 bg-button disabled:bg-black py-4 hover:opacity-70 active:opacity-40 transition-opacity duration-300 rounded-md text-center font-normal text-white">Register now</button>
             </form>
         </div>
