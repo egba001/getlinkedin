@@ -26,6 +26,11 @@ const Main = () => {
                 <div className='hidden lg:block'>
                     <BlurredCircle color={'#460984'} top={'20%'} left={'-3%'} blur={'100px'} size={'30%'} />
                     <BlurredCircle color={'#460984'} top={'50%'} left={'75%'} blur={'100px'} size={'30%'} />
+                    <Star name='url(img/starpu.png)' size='calc(5% - 20px)' top='60%' left='44%'/>
+                    <Star name='url(img/starpu.png)' size='calc(6% - 20px)' top='3%' left='12%'/>
+                    <Star name='url(img/starash.png)' size='calc(6% - 20px)' top='12%' left='80%'/>
+                    <Star name='url(img/starash.png)' size='calc(6% - 20px)' top='75%' left='12%'/>
+                    <Star name='url(whitestar.svg)' size='calc(3.7% - 20px)' top='90.5%' left='94%'/>
                 </div>
                 <div className='lg:hidden'>
                     <Star name='url(img/starpu.png)' size='calc(10% - 20px)' top='20%' left='85%'/>

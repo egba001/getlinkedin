@@ -6,7 +6,6 @@ import { useContext } from "react";
 import hamburger from './../../assets/svg/hamburger.svg';
 import { MdClose } from 'react-icons/md';
 import { motion } from "framer-motion";
-import { Link } from 'react-scroll';
 import { ScrollContext, useScroll } from '././../../context/ScrollContext';
 
 const Navbar = () => {

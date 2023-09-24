@@ -23,10 +23,14 @@ const Main = () => {
 
     return (
         <main className="w-full lg:h-full text-white relative">
-            <div className="container px-6 lg:px-8 flex mx-auto relative py-10 lg:py-20 justify-between">
+            <div className="container px-6 lg:px-28 flex mx-auto relative py-10 lg:py-20 justify-between">
                 <div className='hidden lg:block'>
                     <BlurredCircle color={'#460984'} top={'20%'} left={'-3%'} blur={'100px'} size={'30%'} />
                     <BlurredCircle color={'#460984'} top={'50%'} left={'75%'} blur={'100px'} size={'30%'} />
+                    <Star name='url(img/starash.png)' size='calc(6% - 20px)' top='-1%' left='84%'/>
+                    <Star name='url(img/starpu.png)' size='calc(8% - 20px)' top='70%' left='48.5%'/>
+                    <Star name='url(img/starpu.png)' size='calc(6% - 20px)' top='3%' left='12%'/>
+                    <Star name='url(whitestar.svg)' size='calc(6% - 20px)' top='85%' left='95%'/>
                 </div>
                 <div className='lg:hidden'>
                     <BlurredCircle color={'#460984'} top={'10%'} left={'10%'} blur={'100px'} size={'35%'} />
