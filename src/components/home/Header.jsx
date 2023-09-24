@@ -1,7 +1,7 @@
 import Button from "./../common/Button";
-import earth from '/img/earth.png';
+import earth from './../../assets/earth.png';
 import Star from "./../common/Star";
-import bg from '/img/manmatrix.png';
+import bg from './../../assets/manmatrix.png';
 import CountdownTimer from "./../ui/CountdownTimer";
 import BlurredCircle from "./../common/BlurredCircle";
 import { motion } from "framer-motion"
@@ -41,12 +41,12 @@ const Header = () => {
                         initial={{ opacity: 0 }}
                         className='flex flex-col lg:mt-28 items-center lg:items-start'>
                         <div>
-                            <h1 className="font-clash text-3xl lg:text-7xl font-bold relative after:absolute after:bg-[url(img/bulb.png)] after:h-[80%] after:w-[80%] after:bg-contain after:bg-no-repeat after:bottom-[80%] after:left-[87%]">getlinked Tech</h1>
+                            <h1 className="font-clash text-3xl lg:text-7xl font-bold relative after:absolute after:bg-[url('img/bulb.png')] after:h-[80%] after:w-[80%] after:bg-contain after:bg-no-repeat after:bottom-[80%] after:left-[87%]">getlinked Tech</h1>
                         </div>
                         <div className="flex items-center">
                             <h2 className="font-clash lg:ml-0 text-3xl lg:text-7xl font-bold relative ">Hackathon <span className="text-purp">1.0</span></h2>
-                            <div className="lg:h-12 lg:w-12 w-8 h-8 inline-block bg-[url(img/chain.png)] bg-no-repeat bg-contain"></div>
-                            <div className="lg:h-12 lg:w-12 w-8 h-8 inline-block bg-[url(img/fire.png)] bg-no-repeat bg-contain"></div>
+                            <div className="lg:h-12 lg:w-12 w-8 h-8 inline-block bg-[url('img/chain.png')] bg-no-repeat bg-contain"></div>
+                            <div className="lg:h-12 lg:w-12 w-8 h-8 inline-block bg-[url('img/fire.png')] bg-no-repeat bg-contain"></div>
                         </div>
                         <p className="text-[12px] lg:text-[20px] text-center lg:text-start font-normal font-sans w-[80%] lg:w-[66%] mt-6 mb-12">Participate in getlinked tech Hackathon 2023 stand a chance to win a Big prize</p>
                         <Link to='/registration'>
