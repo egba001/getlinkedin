@@ -30,9 +30,12 @@ const Form = () => {
                 redirect: 'follow'
             }
             fetch(`${import.meta.env.VITE_BASE_URL}/hackathon/contact-form`, requestOptions)
-            .then(response => response.json())
+            .then(response => {
+                response.json()
+            })
             .then(result =>  {
                 console.log(result)
+                actions.setSubmitting(false)
                 actions.resetForm({
                     values: {
                         first_name: '',
@@ -43,7 +46,6 @@ const Form = () => {
                 })
             })
             .catch(error => console.log('error', error));
-            actions.setSubmitting(false);
         },
         validationSchema: Yup.object().shape({
             first_name: Yup.string()
@@ -114,7 +116,9 @@ const Form = () => {
                     <span className='text-red-400 mb-12'>{formik.errors.message}</span>
                 )}
                 <div className="w-fit mx-auto mt-10" >
-                    <Button type='submit' disabled={formik.isSubmitting} text={'Submit'} />
+                    <button disabled={formik.isSubmitting} className="bg-button disabled:bg-black py-4 hover:opacity-70 transition-opacity duration-300 rounded-md text-base text-center px-4 w-44 font-normal text-white">
+                    {formik.isSubmitting ? 'Submitting...' : 'Submit'}
+                    </button>
                 </div>
             </form>
             <div className="w-fit lg:hidden my-6 mx-auto">

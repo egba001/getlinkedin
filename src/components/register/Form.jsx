@@ -54,11 +54,13 @@ const Form = () => {
                 body: raw,
                 redirect: 'follow'
             }
+            
             fetch(`${import.meta.env.VITE_BASE_URL}/hackathon/registration`, requestOptions)
             .then(response => {
                 response.json()
                 if(response) {
                     setIsSuccessful(true);
+                    actions.setSubmitting(false)
                     document.body.classList.add('scroll-lock');
                     actions.resetForm({
                         values: {
@@ -77,7 +79,6 @@ const Form = () => {
                 console.log(result)
             })
             .catch(error => console.log('error', error));
-            actions.setSubmitting(false);
         },
         validationSchema: Yup.object().shape({
             email: Yup.string().email('Invalid email').required('Email address is required'),
@@ -258,7 +259,7 @@ const Form = () => {
                     )}
                 </label>
 
-                <button type="submit" className="w-full mx-auto mt-10 bg-button disabled:bg-black py-4 hover:opacity-70 active:opacity-40 transition-opacity duration-300 rounded-md text-center font-normal text-white">Register now</button>
+                <button type="submit" className="w-full mx-auto mt-10 bg-button disabled:bg-black py-4 hover:opacity-70 active:opacity-40 transition-opacity duration-300 rounded-md text-center font-normal text-white">{formik.isSubmitting ? 'Submitting...' : 'Register now'}</button>
             </form>
         </div>
         </>
