@@ -6,7 +6,8 @@ import { useContext } from "react";
 import hamburger from './../../assets/svg/hamburger.svg';
 import { MdClose } from 'react-icons/md';
 import { motion } from "framer-motion";
-import { ScrollContext, useScroll } from '././../../context/ScrollContext';
+import { ScrollContext } from '././../../context/ScrollContext';
+import { useScroll } from "../../hooks/useScroll";
 
 const Navbar = () => {
 
@@ -20,17 +21,17 @@ const Navbar = () => {
     const { pathname } = useLocation();
 
     const handleFaqClick = () => {
-        navigate('/')
+        navigate('/#faq')
         scrollToElement('faq');
     };
 
     const handleOverClick = () => {
-        navigate('/')
+        navigate('/#overview')
         scrollToElement('overview');
     };
 
     const handleTimeClick = () => {
-        navigate('/')
+        navigate('/#timeline')
         scrollToElement('timeline');
     };
 
@@ -79,21 +80,17 @@ const Navbar = () => {
 
 const MobileNav = ({ closeMenu }) => {
 
-    const navigate = useNavigate()
 
     const handleFaqClick = () => {
         closeMenu()
-        navigate('/')
     };
 
     const handleOverClick = () => {
         closeMenu()
-        navigate('/')
     };
 
     const handleTimeClick = () => {
         closeMenu()
-        navigate('/')
     };
 
     return (
@@ -111,13 +108,13 @@ const MobileNav = ({ closeMenu }) => {
             <nav className="px-[10%] h-fit my-auto block">
                 <ul className="space-y-6 mb-6">
                     <li onClick={handleTimeClick} className="text-white text-[18px] font-medium font-inter tracking-[-1px]">
-                        <p>Timeline</p>
+                        <NavLink to="/">Timeline</NavLink>
                     </li>
                     <li onClick={handleOverClick} className="text-white cursor-pointer text-[18px] font-medium font-inter tracking-[-1px]">
-                        <p>Overview</p>
+                        <NavLink to='/'>Overview</NavLink>
                     </li>
                     <li onClick={handleFaqClick} className="text-white cursor-pointer text-[18px] font-medium font-inter tracking-[-1px]">
-                        <p>FAQs</p>
+                        <NavLink to='/'>FAQs</NavLink>
                     </li>
                     <li onClick={closeMenu} className="text-white text-[18px] font-medium font-inter tracking-[-1px]">
                         <NavLink to="/contact">Contact</NavLink>

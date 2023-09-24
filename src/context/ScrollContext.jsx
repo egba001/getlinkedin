@@ -1,11 +1,7 @@
 // ScrollContext.js
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
 export const ScrollContext = createContext();
-
-export const useScroll = () => {
-  return useContext(ScrollContext);
-};
 
 export const ScrollProvider = ({ children }) => {
 
