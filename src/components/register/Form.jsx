@@ -248,6 +248,7 @@ const Form = () => {
                     <input
                         type="checkbox"
                         name="privacy_policy_accepted"
+                        checked={formik.values.privacy_policy_accepted}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.privacy_policy_accepted}
